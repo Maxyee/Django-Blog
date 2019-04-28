@@ -4,9 +4,13 @@
     <body>
         <h1>{{ title }} is working</h1>
 
+<!-- /posts/detail/{{obj.id}}/ -->
+
+{% comment %} <!-- {% url "detail" a=obj.id %} --> {% endcomment %}
+
         {% for obj in object_list %}
 
-            {{ obj.title }} </br>
+            <a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> </br>
             {{ obj.content }} </br>
             {{ obj.updated }} </br>
             {{ obj.timestamp }} </br>
